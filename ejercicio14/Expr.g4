@@ -1,0 +1,49 @@
+grammar Expr;
+
+root: expr EOF;
+
+expr: EOF;
+
+//PALABRAS RESERVEADAS
+CREATE: 'CREATE';
+TABLE: 'TABLE';
+INSERT: 'INSERT';
+INTO: 'INTO';
+VALUES: 'VALUES';
+SELECT: 'SELECT';
+FROM: 'FROM';
+WHERE: 'WHERE';
+
+//TIPOS DE DATOS
+SERIAL: 'SERIAL';
+VARCHAR: 'VARCHAR';
+INTEGER: 'INTEGER';
+DATE: 'DATE';
+
+//RESTRICCIONES
+NOT: 'NOT';
+NULL: 'NULL';
+PRIMARY: 'PRIMARY';
+KEY: 'KEY';
+
+//OPERACIONES RELACIONALES
+INNER: 'INNER';
+JOIN: 'JOIN';
+ON: 'ON';
+
+//ASIGNACION
+IGUAL: '=';
+
+//SEPERADORES Y DELIMITADORES
+PAR_A: '(';
+PAR_C: ')';
+SEMIC: ';';
+COMA: ',';
+PUNTO: '.';
+
+//OTROS
+STRING: '\'' .*? '\'';
+NUM: [0-9]+;
+
+ID: [a-zA-Z][a-zA-Z0-9_]*;
+WS: [ \t\r\n]+ -> skip;
